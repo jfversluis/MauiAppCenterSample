@@ -48,4 +48,9 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.AppCenter.Analytics" Version="5.0.0-preview.1" />
+	  <PackageReference Include="Microsoft.AppCenter.Crashes" Version="5.0.0-preview.1" />
+	</ItemGroup>
+
 </Project>

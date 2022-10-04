@@ -1,4 +1,8 @@
-﻿namespace MauiAppCenterSample;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+
+namespace MauiAppCenterSample;
 
 public static class MauiProgram
 {
@@ -13,6 +17,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
+        AppCenter.Start("windowsdesktop={Your Windows App secret here};" +
+                "android={Your Android App secret here};" +
+                "ios={Your iOS App secret here};" +
+                "macos={Your macOS App secret here};",
+                typeof(Analytics), typeof(Crashes));
+
+        return builder.Build();
 	}
 }
